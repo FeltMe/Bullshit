@@ -6,8 +6,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bullshit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Kaban" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button Content="Click me" Grid.Row="1"/>
+        <Label Grid.Column="2" Content="Test Test" FontSize="15" Foreground="Blue" Grid.Row="1"/>
+        <Controls:TimePicker Grid.Row="2"/>
+        <ListView Foreground="Blue" FontSize="14" Grid.Column="2" Grid.Row="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Test1}" Width="auto">Test</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Test2}" Width="auto">Test</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Test3}" Width="auto">Test</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Menu Grid.ColumnSpan="3">
+            <MenuItem Header="Test1">
+                <MenuItem Header="Test10"/>
+                <MenuItem Header="Test11"/>
+                <MenuItem Header="Test12"/>
+            </MenuItem>
+            <MenuItem Header="Test2"/>
+            <MenuItem Header="Test3"/>
+        </Menu>
+
+        <ToolBar Grid.Row="4" Grid.ColumnSpan="3" BorderBrush="AntiqueWhite">
+            <Label Content="Test Test" FontSize="15" Foreground="Blue"/>
+            <Controls:MetroProgressBar Width="200"/>
+        </ToolBar>
+
     </Grid>
 </Controls:MetroWindow>
