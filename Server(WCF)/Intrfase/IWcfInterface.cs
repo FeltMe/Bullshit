@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Server_WCF_.Intrfase
 {
-    interface IWcfInterface
+    public interface IWcfInterface
     {
+        void WriteToDbOneUser(object user);
+        object ReadFromDbOneUser();
+        object RetrunCurentStateOfProject(int ProjectId); // Return to user full state of project + return state of tasks
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ServiceHost;
+using System.ServiceModel;
 
 namespace Server_WCF_
 {
@@ -11,7 +11,9 @@ namespace Server_WCF_
     {
         static void Main(string[] args)
         {
-            ServiceHost host = new ServiceHost(typeof(DiscInfo));
+            ServiceHost host = new ServiceHost(typeof(WCFRealize));
+            Console.WriteLine("started");
+            Console.ReadLine();
         }
     }
 }
