@@ -10,18 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace Bullshit
 {
-
-    public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
+    public partial class LoginWindow : MahApps.Metro.Controls.MetroWindow
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
+
+        private void LoginClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Login();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Enter corect datas");
+            }
+        }
+
+        private void Login()
+        {
+
+        }
     }
-}   
+}
