@@ -30,7 +30,7 @@
 
         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" VerticalAlignment="Bottom">
             <TextBox x:Name="UsernameTextBox" Margin="60,0,60,0" Height="30" FontSize="15"/>
-            <PasswordBox Margin="60,10,60,40" Height="30"/>
+            <PasswordBox x:Name="UserPasswordBox" Margin="60,10,60,40" Height="30"/>
             <Button Content="Login in" Margin="60,0,60,0" Grid.ColumnSpan="2" Background="MediumPurple" Height="40" Click="LoginClick"/>
         </StackPanel>
     </Grid>

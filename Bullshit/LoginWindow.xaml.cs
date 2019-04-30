@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bullshit.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace Bullshit
 {
     public partial class LoginWindow : MahApps.Metro.Controls.MetroWindow
     {
+        public int Key { get; set; } = 1;
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -23,19 +26,41 @@ namespace Bullshit
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Login();
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Enter corect datas");
-            }
+            Login();
         }
 
         private void Login()
         {
+            User loginer = new User()
+            {
+                Login = Encryption(UsernameTextBox.Text, Key),
+                Password = Encryption(UserPasswordBox.Password, Key)
+            };
 
+
+
+            if(Sercher(loginer))
+            {
+                this.Visibility = Visibility.Hidden;
+                MainWindow main = new MainWindow();
+                main.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Enter data not corect");
+            }
+            
+        }
+
+        private string Encryption(string data, int key)
+        {
+            string newdata = "";
+            foreach (char ch in data.ToCharArray())
+            {
+                char tmp = (char)(ch ^ key);
+                newdata += tmp;
+            }
+            return newdata;
         }
     }
 }
