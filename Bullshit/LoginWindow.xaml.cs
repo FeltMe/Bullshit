@@ -28,11 +28,20 @@ namespace Bullshit
         {
             Login();
         }
-
+        
         private void Login()
         {
             AcceptLoginWCFData datas = new AcceptLoginWCFData();
-            datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password);
+            if(datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password))
+            {
+                MainWindow window = new MainWindow();
+                window.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Eror while Logi in");
+            }
         }
     }
 }

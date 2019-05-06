@@ -5,19 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Bullshit.Classes;
 
 namespace Bullshit.Classes
 {
     public class AcceptLoginWCFData
     {
-        public int Key { get; set; } = 1;
+        public MyEncipher Enc { get; set; } = new MyEncipher();
 
         public bool CheckIn(string username, string password)
         {
             User loginer = new User()
             {
-                Login = Encryption(username, Key),
-                Password = Encryption(password, Key)
+                Login = Enc.Encryption(username),
+                Password = Enc.Encryption(password)
             };
 
             WcfInterfaceClient client = new WcfInterfaceClient();
@@ -26,17 +28,6 @@ namespace Bullshit.Classes
                 return true;
             }
             else return false;
-        }
-
-        private string Encryption(string data, int key) //Encryption password
-        {
-            string newdata = "";
-            foreach (char ch in data.ToCharArray())
-            {
-                char tmp = (char)(ch ^ key);
-                newdata += tmp;
-            }
-            return newdata;
         }
     }
 }
