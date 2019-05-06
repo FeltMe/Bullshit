@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ServiceModel;
+using Bullshit.ServiceReference1;
 
 namespace Bullshit
 {
@@ -29,7 +31,7 @@ namespace Bullshit
             Login();
         }
 
-        private void Login()
+        private void Login() 
         {
             User loginer = new User()
             {
@@ -37,22 +39,23 @@ namespace Bullshit
                 Password = Encryption(UserPasswordBox.Password, Key)
             };
 
-
-
-            if(Sercher(loginer))
+            using (WcfInterfaceClient wcf = new WcfInterfaceClient())
             {
-                this.Visibility = Visibility.Hidden;
-                MainWindow main = new MainWindow();
-                main.ShowDialog();
+                if (wcf.IsLogined(loginer as object))
+                {
+                    this.Visibility = Visibility.Hidden;
+                    MainWindow main = new MainWindow();
+                    main.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Enter data not corect");
+                }
             }
-            else
-            {
-                MessageBox.Show("Enter data not corect");
-            }
-            
+
         }
 
-        private string Encryption(string data, int key)
+        private string Encryption(string data, int key) //Encryption password
         {
             string newdata = "";
             foreach (char ch in data.ToCharArray())
@@ -64,3 +67,6 @@ namespace Bullshit
         }
     }
 }
+
+
+
