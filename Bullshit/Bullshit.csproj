@@ -137,10 +137,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\Bullshit.ServiceReference1.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\Design_Time_Addresses.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\Design_Time_Addresses1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Design_Time_Addresses2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\WCFRealize.wsdl" />

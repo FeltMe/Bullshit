@@ -26,13 +26,19 @@ namespace Bullshit
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
+            //WcfInterfaceClient wcf = new WcfInterfaceClient();
+            //var s = wcf.Test("Test");
+            //var q = wcf.IsLogined(new Bullshit.ServiceReference1.User() { Login = UsernameTextBox.Text });
+            //MessageBox.Show(q.ToString());
+
+
             Login();
         }
-        
+
         private void Login()
         {
             AcceptLoginWCFData datas = new AcceptLoginWCFData();
-            if(datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password))
+            if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password))
             {
                 MainWindow window = new MainWindow();
                 window.Show();

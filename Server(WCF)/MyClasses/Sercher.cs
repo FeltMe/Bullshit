@@ -9,14 +9,13 @@ namespace Server_WCF_
 {
     public class Sercher
     {
-        public bool Serch(object user)
+        public bool Serch(User user)
         {
-            var MyUser = (user as User);
             using (MyAccounst accounst = new MyAccounst())
             {
                 foreach (var item in accounst.Users)
                 {
-                    if (item.Login == MyUser.Login && item.Password == MyUser.Password)
+                    if (item.Login == user.Login && item.Password == user.Password)
                     {
                         return true;
                     }

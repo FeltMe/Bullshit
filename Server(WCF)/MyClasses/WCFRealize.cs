@@ -28,6 +28,8 @@ namespace Server_WCF_
 
         public bool IsLogined(User user) 
         {
+
+            Console.WriteLine(user.Login);
             Sercher sercher = new Sercher();
             if (sercher.Serch(user))
                 return true;

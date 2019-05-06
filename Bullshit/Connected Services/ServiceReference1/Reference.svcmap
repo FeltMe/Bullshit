@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b0b3174-541d-4416-a780-fa67da2f64b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8898f49c-6cbc-433d-8b38-40bc67a5e1e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WCFRealize.wsdl" MetadataType="Wsdl" ID="bdae1af8-37ca-4404-beb7-a4e0ea9a7deb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?wsdl" />
-    <MetadataFile FileName="Design_Time_Addresses.xsd" MetadataType="Schema" ID="2585219b-ad3f-4ffc-a614-4015efdfb31d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd0" />
-    <MetadataFile FileName="Design_Time_Addresses1.xsd" MetadataType="Schema" ID="e474de08-5464-4636-9604-5f9de14335da" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" />
-    <MetadataFile FileName="Design_Time_Addresses.disco" MetadataType="Disco" ID="60f8f32c-669a-4ff5-ad3e-d7151fdce7ac" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?disco" />
+    <MetadataFile FileName="WCFRealize.wsdl" MetadataType="Wsdl" ID="5b700f1f-16c3-4af1-8e45-9aebc43bdd4f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?wsdl" />
+    <MetadataFile FileName="Design_Time_Addresses.xsd" MetadataType="Schema" ID="17abd248-4c4d-471c-9d60-309595ccdfa2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd2" />
+    <MetadataFile FileName="Design_Time_Addresses1.xsd" MetadataType="Schema" ID="e021422d-5e7d-4663-aeef-fb083167c77f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd0" />
+    <MetadataFile FileName="Design_Time_Addresses2.xsd" MetadataType="Schema" ID="9d69f330-db02-4d2f-bca2-690d048ea3be" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" />
+    <MetadataFile FileName="Design_Time_Addresses.disco" MetadataType="Disco" ID="193470ac-941d-4446-915f-eaf537f3b0c4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

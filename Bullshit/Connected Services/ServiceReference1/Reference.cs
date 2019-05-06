@@ -9,35 +9,136 @@
 //------------------------------------------------------------------------------
 
 namespace Bullshit.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/Bullshit.Db")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool RightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Right {
+            get {
+                return this.RightField;
+            }
+            set {
+                if ((this.RightField.Equals(value) != true)) {
+                    this.RightField = value;
+                    this.RaisePropertyChanged("Right");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWcfInterface")]
     public interface IWcfInterface {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
-        void WriteToDbOneUser(object user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Test", ReplyAction="http://tempuri.org/IWcfInterface/TestResponse")]
+        string Test(string User);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Test", ReplyAction="http://tempuri.org/IWcfInterface/TestResponse")]
+        System.Threading.Tasks.Task<string> TestAsync(string User);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
-        System.Threading.Tasks.Task WriteToDbOneUserAsync(object user);
+        void WriteToDbOneUser(Bullshit.ServiceReference1.User User);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
+        System.Threading.Tasks.Task WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReadFromDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/ReadFromDbOneUserResponse")]
-        object ReadFromDbOneUser();
+        Bullshit.ServiceReference1.User ReadFromDbOneUser();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReadFromDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/ReadFromDbOneUserResponse")]
-        System.Threading.Tasks.Task<object> ReadFromDbOneUserAsync();
+        System.Threading.Tasks.Task<Bullshit.ServiceReference1.User> ReadFromDbOneUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/RetrunCurentStateOfProject", ReplyAction="http://tempuri.org/IWcfInterface/RetrunCurentStateOfProjectResponse")]
-        object RetrunCurentStateOfProject(int ProjectId);
+        Bullshit.ServiceReference1.User RetrunCurentStateOfProject(int ProjectId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/RetrunCurentStateOfProject", ReplyAction="http://tempuri.org/IWcfInterface/RetrunCurentStateOfProjectResponse")]
-        System.Threading.Tasks.Task<object> RetrunCurentStateOfProjectAsync(int ProjectId);
+        System.Threading.Tasks.Task<Bullshit.ServiceReference1.User> RetrunCurentStateOfProjectAsync(int ProjectId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/IsLogined", ReplyAction="http://tempuri.org/IWcfInterface/IsLoginedResponse")]
-        bool IsLogined(object user);
+        bool IsLogined(Bullshit.ServiceReference1.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/IsLogined", ReplyAction="http://tempuri.org/IWcfInterface/IsLoginedResponse")]
-        System.Threading.Tasks.Task<bool> IsLoginedAsync(object user);
+        System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -67,35 +168,43 @@ namespace Bullshit.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public void WriteToDbOneUser(object user) {
-            base.Channel.WriteToDbOneUser(user);
+        public string Test(string User) {
+            return base.Channel.Test(User);
         }
         
-        public System.Threading.Tasks.Task WriteToDbOneUserAsync(object user) {
-            return base.Channel.WriteToDbOneUserAsync(user);
+        public System.Threading.Tasks.Task<string> TestAsync(string User) {
+            return base.Channel.TestAsync(User);
         }
         
-        public object ReadFromDbOneUser() {
+        public void WriteToDbOneUser(Bullshit.ServiceReference1.User User) {
+            base.Channel.WriteToDbOneUser(User);
+        }
+        
+        public System.Threading.Tasks.Task WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User) {
+            return base.Channel.WriteToDbOneUserAsync(User);
+        }
+        
+        public Bullshit.ServiceReference1.User ReadFromDbOneUser() {
             return base.Channel.ReadFromDbOneUser();
         }
         
-        public System.Threading.Tasks.Task<object> ReadFromDbOneUserAsync() {
+        public System.Threading.Tasks.Task<Bullshit.ServiceReference1.User> ReadFromDbOneUserAsync() {
             return base.Channel.ReadFromDbOneUserAsync();
         }
         
-        public object RetrunCurentStateOfProject(int ProjectId) {
+        public Bullshit.ServiceReference1.User RetrunCurentStateOfProject(int ProjectId) {
             return base.Channel.RetrunCurentStateOfProject(ProjectId);
         }
         
-        public System.Threading.Tasks.Task<object> RetrunCurentStateOfProjectAsync(int ProjectId) {
+        public System.Threading.Tasks.Task<Bullshit.ServiceReference1.User> RetrunCurentStateOfProjectAsync(int ProjectId) {
             return base.Channel.RetrunCurentStateOfProjectAsync(ProjectId);
         }
         
-        public bool IsLogined(object user) {
+        public bool IsLogined(Bullshit.ServiceReference1.User user) {
             return base.Channel.IsLogined(user);
         }
         
-        public System.Threading.Tasks.Task<bool> IsLoginedAsync(object user) {
+        public System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user) {
             return base.Channel.IsLoginedAsync(user);
         }
     }

@@ -17,7 +17,7 @@ namespace Bullshit.Classes
             WcfInterfaceClient wcf = new WcfInterfaceClient();
             try
             {
-                wcf.WriteToDbOneUser(new Db.User() { Login = Enc.Encryption(username), Password = Enc.Encryption(password), Right = role });
+                wcf.WriteToDbOneUser(new ServiceReference1.User() { Login = Enc.Encryption(username), Password = Enc.Encryption(password), Right = role });
             }
             catch (Exception)
             {
