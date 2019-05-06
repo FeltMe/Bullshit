@@ -11,25 +11,24 @@ namespace Server_WCF_
 {
     public class WCFRealize : IWcfInterface
     {
-        public void WriteToDbOneUser(object user) //todo
-        {
+        public void WriteToDbOneUser(User user) //todo
+        { 
 
         }
 
-        public object ReadFromDbOneUser()
-        {
-            return null; //todo
-        }
-
-        public object RetrunCurentStateOfProject(int IdOfProject)
+        public User ReadFromDbOneUser()
         {
             return null; //todo
         }
 
-        public bool IsLogined(object user) 
+        public User RetrunCurentStateOfProject(int IdOfProject)
+        {
+            return null; //todo
+        }
+
+        public bool IsLogined(User user) 
         {
             Sercher sercher = new Sercher();
-            var MyUser = (user as User);
             if (sercher.Serch(user))
                 return true;
             else return false;

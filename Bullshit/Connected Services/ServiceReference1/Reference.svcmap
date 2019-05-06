@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="502af8d1-8ac9-4976-a1e0-59c799090863" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b0b3174-541d-4416-a780-fa67da2f64b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,12 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/MyWCFService/" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3718c99b-94b6-4de4-8d46-2bce318c4e67" SourceId="1" SourceUrl="http://localhost:8733/MyWCFService/" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5e58e467-842e-44a5-a79c-549ef0e83894" SourceId="1" SourceUrl="http://localhost:8733/MyWCFService/" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f5e9dd94-f086-4a78-addc-300f7544f29f" SourceId="1" SourceUrl="http://localhost:8733/MyWCFService/" />
+    <MetadataFile FileName="WCFRealize.wsdl" MetadataType="Wsdl" ID="bdae1af8-37ca-4404-beb7-a4e0ea9a7deb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?wsdl" />
+    <MetadataFile FileName="Design_Time_Addresses.xsd" MetadataType="Schema" ID="2585219b-ad3f-4ffc-a614-4015efdfb31d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd0" />
+    <MetadataFile FileName="Design_Time_Addresses1.xsd" MetadataType="Schema" ID="e474de08-5464-4636-9604-5f9de14335da" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" />
+    <MetadataFile FileName="Design_Time_Addresses.disco" MetadataType="Disco" ID="60f8f32c-669a-4ff5-ad3e-d7151fdce7ac" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

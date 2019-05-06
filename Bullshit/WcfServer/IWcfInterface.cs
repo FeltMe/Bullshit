@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using Bullshit.Db;
 
 namespace Server_WCF_.Intrfase
 {
@@ -11,12 +12,15 @@ namespace Server_WCF_.Intrfase
     public interface IWcfInterface
     {
         [OperationContract]
-        void WriteToDbOneUser(object user);
+        void WriteToDbOneUser(User User);
+
         [OperationContract]
-        object ReadFromDbOneUser();
+        User ReadFromDbOneUser();
+
         [OperationContract]
-        object RetrunCurentStateOfProject(int ProjectId); // Return to user full state of project + return state of tasks
+        User RetrunCurentStateOfProject(int ProjectId); // Return to user full state of project + return state of tasks
+
         [OperationContract]
-        bool IsLogined(object user);
+        bool IsLogined(User user);
     }
 }
