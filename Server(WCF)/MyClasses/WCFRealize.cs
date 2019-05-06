@@ -12,7 +12,7 @@ namespace Server_WCF_
     public class WCFRealize : IWcfInterface
     {
         public void WriteToDbOneUser(User user) //todo
-        { 
+        {
 
         }
 
@@ -26,7 +26,7 @@ namespace Server_WCF_
             return null; //todo
         }
 
-        public bool IsLogined(User user) 
+        public bool IsLogined(User user)
         {
 
             Console.WriteLine(user.Login);

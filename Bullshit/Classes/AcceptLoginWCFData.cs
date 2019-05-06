@@ -16,10 +16,10 @@ namespace Bullshit.Classes
 
         public bool CheckIn(string username, string password)
         {
-           ServiceReference1.User loginer = new ServiceReference1.User()
-           {
-               Login = Enc.Encryption(username),
-               Password = Enc.Encryption(password)
+            ServiceReference1.User loginer = new ServiceReference1.User()
+            {
+                Login = /*Enc.Encryption*/username,
+                Password = /*Enc.Encryption*/password
            };
         
             WcfInterfaceClient client = new WcfInterfaceClient();
