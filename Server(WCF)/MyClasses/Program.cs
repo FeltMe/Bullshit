@@ -11,14 +11,11 @@ namespace Server_WCF_
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                ServiceHost host = new ServiceHost(typeof(WCFRealize));
-                host.Open();
-                Console.WriteLine("WCF Service Started");
-                Console.ReadLine();
-                host.Close();
-            }
+            ServiceHost host = new ServiceHost(typeof(WCFRealize));
+            host.Open();
+            Console.WriteLine("WCF Service Started");
+            Console.ReadLine();
+            host.Close();
         }
     }
 }

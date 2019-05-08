@@ -11,6 +11,6 @@ namespace Bullshit.Db
     class MyAccounst : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public MyAccounst() : base(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString) {}
+        public MyAccounst() : base(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString) {} 
     }
 }

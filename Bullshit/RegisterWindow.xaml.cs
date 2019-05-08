@@ -44,8 +44,8 @@ namespace Bullshit
         {
             ServiceReference1.User user = new ServiceReference1.User
             {
-                Login = "11",
-                Password = "11",
+                Login = "111",
+                Password = "111",
                 Right = false
             };
             return user;

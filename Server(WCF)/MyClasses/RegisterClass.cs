@@ -12,29 +12,28 @@ namespace Server_WCF_.MyClasses
     {
         public bool AddNewUser(User user)
         {
-            using (MyAccounst accounst = new MyAccounst())
+            MyAccounst myAccounst = new MyAccounst();
+            try
             {
-                try
+                if (myAccounst.Users.ToList().Contains(user) == true)
                 {
-                    if (accounst.Users.Contains(user) == false)
-                    {
-                        accounst.Users.Add(user);
-                        Console.WriteLine($"User {user.Login} Secureful added");
-                        return true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("User already Exist");
-                        return false;
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                    Console.WriteLine("Eror while adding");
                     return false;
                 }
+                else
+                {
+                    myAccounst.Users.Add(user);
+                    myAccounst.SaveChanges();
+                    return true;
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return false;
         }
+
     }
+
 }
