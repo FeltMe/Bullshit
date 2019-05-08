@@ -198,9 +198,14 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Lupa.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\1200x630wa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KanBan.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

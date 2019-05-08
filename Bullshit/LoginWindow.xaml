@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bullshit"
         mc:Ignorable="d"
-        Title="" Height="300" Width="400" WindowStartupLocation="CenterScreen" MinWidth="350" MinHeight="300" ResizeMode="CanMinimize">
+        Title="Login in" Height="300" Width="400" WindowStartupLocation="CenterScreen" MinWidth="350" MinHeight="300" ResizeMode="CanMinimize" Icon="/Resources/KanBan.png" ShowIconOnTitleBar="False">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,24 +15,26 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
-        
-        <Menu Grid.ColumnSpan="4" FontSize="10">
+
+
+        <Menu Grid.ColumnSpan="3" FontSize="10">
             <MenuItem Header=""/>
-            <MenuItem/>     
+            <MenuItem/>
             <MenuItem/>
         </Menu>
 
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="4" VerticalAlignment="Bottom">
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="165">
             <TextBox x:Name="UsernameTextBox" Margin="60,0,60,0" Height="30" FontSize="15"/>
             <PasswordBox x:Name="UserPasswordBox" Margin="60,10,60,30" Height="30"/>
             <Button Content="Login in" Margin="60,0,60,0" Grid.ColumnSpan="2" Background="MediumPurple" Height="30" Click="LoginClick"/>
             <Button Content="Sign Up" Margin="60,5,60,0" Grid.ColumnSpan="2" Background="MediumPurple" Height="30" Click="SignUpClick"/>
 
         </StackPanel>
+
+        <Image Source="/Resources/KanBan.png" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Controls:MetroWindow>
