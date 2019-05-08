@@ -12,16 +12,21 @@ namespace Bullshit.Classes
     {
         public MyEncipher Enc { get; set; } = new MyEncipher();
 
-        public void AddNewUser(string username, string password, bool role = false)
+        public bool AddNewUser(User user)
         {
             WcfInterfaceClient wcf = new WcfInterfaceClient();
             try
             {
-                wcf.WriteToDbOneUser(new ServiceReference1.User() { Login = Enc.Encryption(username), Password = Enc.Encryption(password), Right = role });
+                if (wcf.WriteToDbOneUser(user))
+                {
+                    return true;
+                }
+                else return false;
             }
             catch (Exception)
             {
-               MessageBox.Show("Eror while registration");
+                MessageBox.Show("Eror while registration");
+                return false;
             }
         }
     }

@@ -110,17 +110,11 @@ namespace Bullshit.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWcfInterface")]
     public interface IWcfInterface {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Test", ReplyAction="http://tempuri.org/IWcfInterface/TestResponse")]
-        string Test(string User);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Test", ReplyAction="http://tempuri.org/IWcfInterface/TestResponse")]
-        System.Threading.Tasks.Task<string> TestAsync(string User);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
+        bool WriteToDbOneUser(Bullshit.ServiceReference1.User User);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
-        void WriteToDbOneUser(Bullshit.ServiceReference1.User User);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/WriteToDbOneUserResponse")]
-        System.Threading.Tasks.Task WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User);
+        System.Threading.Tasks.Task<bool> WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReadFromDbOneUser", ReplyAction="http://tempuri.org/IWcfInterface/ReadFromDbOneUserResponse")]
         Bullshit.ServiceReference1.User ReadFromDbOneUser();
@@ -168,19 +162,11 @@ namespace Bullshit.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string Test(string User) {
-            return base.Channel.Test(User);
+        public bool WriteToDbOneUser(Bullshit.ServiceReference1.User User) {
+            return base.Channel.WriteToDbOneUser(User);
         }
         
-        public System.Threading.Tasks.Task<string> TestAsync(string User) {
-            return base.Channel.TestAsync(User);
-        }
-        
-        public void WriteToDbOneUser(Bullshit.ServiceReference1.User User) {
-            base.Channel.WriteToDbOneUser(User);
-        }
-        
-        public System.Threading.Tasks.Task WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User) {
+        public System.Threading.Tasks.Task<bool> WriteToDbOneUserAsync(Bullshit.ServiceReference1.User User) {
             return base.Channel.WriteToDbOneUserAsync(User);
         }
         

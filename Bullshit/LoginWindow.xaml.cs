@@ -26,12 +26,6 @@ namespace Bullshit
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            //WcfInterfaceClient wcf = new WcfInterfaceClient();
-            //var s = wcf.Test("Test");
-            //var q = wcf.IsLogined(new Bullshit.ServiceReference1.User() { Login = UsernameTextBox.Text });
-            //MessageBox.Show(q.ToString());
-
-
             Login();
         }
 
@@ -48,6 +42,13 @@ namespace Bullshit
             {
                 MessageBox.Show("Eror while Logi in");
             }
+        }
+
+        private void SignUpClick(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow window = new RegisterWindow();
+            window.Show();
+            this.Close();
         }
     }
 }

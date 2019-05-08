@@ -12,7 +12,7 @@ namespace Server_WCF_.Intrfase
     public interface IWcfInterface
     {
         [OperationContract]
-        void WriteToDbOneUser(User User);
+        bool WriteToDbOneUser(User User);
 
         [OperationContract]
         User ReadFromDbOneUser();
