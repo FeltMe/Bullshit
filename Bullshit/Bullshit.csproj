@@ -96,11 +96,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="MyVisualTask.xaml.cs">
+      <DependentUpon>MyVisualTask.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StrarupUserControl.xaml.cs">
       <DependentUpon>StrarupUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
     <Compile Include="WcfServer\IWcfInterface.cs" />
     <Page Include="LoginWindow.xaml">
@@ -124,11 +130,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyVisualTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StrarupUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,6 +220,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\KanBan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Apply_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Apply-Now_Purple-300x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

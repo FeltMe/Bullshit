@@ -24,5 +24,44 @@ namespace Bullshit
         {
             InitializeComponent();
         }
+
+        private void panel_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent("Object"))
+            {
+                if (e.KeyStates == DragDropKeyStates.ControlKey)
+                {
+                    e.Effects = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effects = DragDropEffects.Move;
+                }
+            }
+        }
+
+        private void panel_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Handled == false)
+            {
+                Panel _panel = (Panel)sender;
+                UIElement _element = (UIElement)e.Data.GetData("Object");
+
+                if (_panel != null && _element != null)
+                {
+                    Panel _parent = (Panel)VisualTreeHelper.GetParent(_element);
+
+                    if (_parent != null)
+                    {
+                        if (e.AllowedEffects.HasFlag(DragDropEffects.Move))
+                        {
+                            _parent.Children.Remove(_element);
+                            _panel.Children.Add(_element);
+                            e.Effects = DragDropEffects.Move;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

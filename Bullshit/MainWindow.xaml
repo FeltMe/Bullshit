@@ -37,6 +37,7 @@
         </Menu>
         
         <local:StrarupUserControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
+        
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
             <Image Source="/Resources/Lupa.png" Width="20" Margin="0,11,0,0"/>
             <TextBox VerticalAlignment="Center" Width="124" Margin="0, 11 ,-10,0"/>
