@@ -34,26 +34,31 @@ namespace Bullshit
                 data.SetData("Double", MyTask.Height);
                 data.SetData("Object", this);
 
-                DragDrop.DoDragDrop(this, data, DragDropEffects.Copy | DragDropEffects.Move);
+                DragDrop.DoDragDrop(this, data, DragDropEffects.Move);
+
             }
         }
 
         protected override void OnGiveFeedback(GiveFeedbackEventArgs e)
         {
-            base.OnGiveFeedback(e);
-            if (e.Effects.HasFlag(DragDropEffects.Copy))
+            try
             {
-                Mouse.SetCursor(Cursors.Cross);
+                base.OnGiveFeedback(e);
+                if (e.Effects.HasFlag(DragDropEffects.Move))
+                {
+                    Mouse.SetCursor(Cursors.Pen);
+                }
+                else
+                {
+                    Mouse.SetCursor(Cursors.No);
+                }
+                e.Handled = true;
             }
-            else if (e.Effects.HasFlag(DragDropEffects.Move))
+            catch (Exception)
             {
-                Mouse.SetCursor(Cursors.Pen);
+
             }
-            else
-            {
-                Mouse.SetCursor(Cursors.No);
-            }
-            e.Handled = true;
+
         }
 
         private void ApplyClick(object sender, MouseButtonEventArgs e)

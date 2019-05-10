@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,14 +30,7 @@ namespace Bullshit
         {
             if (e.Data.GetDataPresent("Object"))
             {
-                if (e.KeyStates == DragDropKeyStates.ControlKey)
-                {
-                    e.Effects = DragDropEffects.Copy;
-                }
-                else
-                {
-                    e.Effects = DragDropEffects.Move;
-                }
+                e.Effects = DragDropEffects.Move;
             }
         }
 
@@ -62,6 +56,12 @@ namespace Bullshit
                     }
                 }
             }
+        }
+
+        private void CreateNewTaskClick(object sender, MouseButtonEventArgs e)
+        {
+            var tmp = (sender as StackPanel);
+            tmp.Children.Add(new MyVisualTask() { Height = 80, Margin = new Thickness() { Left = 5, Bottom = 5, Right = 5, Top = 5 } });
         }
     }
 }

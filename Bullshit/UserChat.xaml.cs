@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Bullshit
 {
     /// <summary>
-    /// Логика взаимодействия для UserControl1.xaml
+    /// Логика взаимодействия для UserChat.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class UserChat : UserControl
     {
-        public UserControl1()
+        public UserChat()
         {
             InitializeComponent();
         }

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Bullshit"
         mc:Ignorable="d"
         Title="Kaban" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/KanBan.png" ShowIconOnTitleBar="False">
-    <Grid>
+    <Grid x:Name="MyMainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="4*"/>
@@ -36,17 +36,17 @@
             <Image Source="/Resources/1200x630wa.png" Height="20" Width="20"/>
         </Menu>
         
-        <local:StrarupUserControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="7"/>
         
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
             <Image Source="/Resources/Lupa.png" Width="20" Margin="0,11,0,0"/>
             <TextBox VerticalAlignment="Center" Width="124" Margin="0, 11 ,-10,0"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Team tasks" Margin="10,10,10,10"/>
+        <Button Grid.Row="2" Content="Team tasks" Margin="10,10,10,10" Click="TeamTasksClick"/>
         <Button Grid.Row="3" Content="My tasks" Margin="10,10,10,10"/>
         <Button Grid.Row="4" Content="Вisposable tasks" Margin="10,10,10,10"/>
         <Button Grid.Row="5" Content="Add new task" Margin="10,10,10,10"/>
+        <Button Grid.Row="6" Content="Add new task" Margin="10,10,10,10" Click="ChatOpenClick"/>
 
     </Grid>
 </Controls:MetroWindow>
