@@ -1,5 +1,4 @@
-﻿using Bullshit.Db;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,9 +31,13 @@ namespace Bullshit
         private void Login()
         {
             AcceptLoginWCFData datas = new AcceptLoginWCFData();
-            if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password))
+            User user = new User();
+            if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password, ref user))
             {
-                MainWindow window = new MainWindow();
+                MainWindow window = new MainWindow
+                {
+                    Currentuser = user
+                };
                 window.Show();
                 this.Close();
             }

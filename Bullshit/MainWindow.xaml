@@ -23,7 +23,7 @@
 
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu Grid.ColumnSpan="2" Margin="0,0,101,0">
+        <Menu Grid.ColumnSpan="2">
             <MenuItem Header="Menu"/>
             <MenuItem Header="Friends"/>
             <MenuItem Header="Tasks">
@@ -32,8 +32,9 @@
 
         </Menu>
         <Menu Grid.Column="1" HorizontalAlignment="Right">
-            <MenuItem Header="Solution"/>
-            <Image Source="/Resources/1200x630wa.png" Height="20" Width="20"/>
+            <MenuItem Header="Me" MouseEnter="MenuMeEnter">
+                <TextBlock x:Name="UserName"/>
+            </MenuItem>
         </Menu>
 
 

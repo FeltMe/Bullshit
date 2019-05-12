@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bullshit.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Bullshit
 
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
+        public User Currentuser { get; set; }
         private CanbanControle canban = new CanbanControle();
         private UserChat chat = new UserChat();
         private const int Grid_row = 1;
@@ -55,6 +57,11 @@ namespace Bullshit
         {
             ToVisible.Visibility = Visibility.Visible;
             ToHide.Visibility = Visibility.Hidden;
+        }
+
+        private void MenuMeEnter(object sender, MouseEventArgs e)
+        {
+            UserName.Text = Currentuser.Login;
         }
     }
 }

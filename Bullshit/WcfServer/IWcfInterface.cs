@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
-using Bullshit.Db;
+using Bullshit.ServiceReference1;
 
 namespace Server_WCF_.Intrfase
 {

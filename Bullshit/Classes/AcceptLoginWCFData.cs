@@ -1,5 +1,4 @@
-﻿using Bullshit.Db;
-using Bullshit.ServiceReference1;
+﻿using Bullshit.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +12,15 @@ namespace Bullshit.Classes
     public class AcceptLoginWCFData
     {
         public MyEncipher Enc { get; set; } = new MyEncipher();
+        public User LoginedUser { get; set; }
 
-        public bool CheckIn(string username, string password)
+        public bool CheckIn(string username, string password, ref User user)
         {
-            ServiceReference1.User loginer = new ServiceReference1.User()
-            {
-                Login = /*Enc.Encryption*/username,
-                Password = /*Enc.Encryption*/password
-           };
-        
+            user.Login = /*Enc.Encryption*/username;
+            user.Password = /*Enc.Encryption*/password;
+
             WcfInterfaceClient client = new WcfInterfaceClient();
-            if (client.IsLogined(loginer))
+            if (client.IsLogined(user))
             {
                 return true;
             }
