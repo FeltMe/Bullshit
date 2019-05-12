@@ -46,7 +46,10 @@ namespace Bullshit
             {
                 Login = "111",
                 Password = "111",
-                Right = false
+                Right = false,
+                Gmail = "1",
+                
+                
             };
             return user;
         }

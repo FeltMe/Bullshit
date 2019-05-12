@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Db\MyAccounst.cs" />
+    <Compile Include="Db\Project.cs" />
     <Compile Include="Db\User.cs" />
     <Compile Include="Intrfase\IWcfInterface.cs" />
     <Compile Include="MyClasses\Program.cs" />

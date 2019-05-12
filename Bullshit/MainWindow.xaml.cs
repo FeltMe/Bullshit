@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,12 +21,16 @@ namespace Bullshit
 
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
-        public User Currentuser { get; set; }
-        private CanbanControle canban = new CanbanControle();
-        private UserChat chat = new UserChat();
+
         private const int Grid_row = 1;
         private const int Grid_col = 1;
         private const int Grid_row_span = 7;
+
+
+        public User Currentuser { get; set; }
+        private CanbanControle canban = new CanbanControle();
+        private UserChat chat = new UserChat();
+
 
         public MainWindow()
         {
@@ -51,6 +56,7 @@ namespace Bullshit
         private void ChatOpenClick(object sender, RoutedEventArgs e)
         {
             Visible(chat, canban);
+            chat.Currentuser = Currentuser;
         }
 
         private void Visible(UserControl ToVisible, UserControl ToHide)
@@ -63,5 +69,7 @@ namespace Bullshit
         {
             UserName.Text = Currentuser.Login;
         }
+
+        
     }
 }
