@@ -24,5 +24,10 @@ namespace Bullshit
         {
             InitializeComponent();
         }
+
+        private void SendClick(object sender, RoutedEventArgs e)
+        {
+             
+        }
     }
 }

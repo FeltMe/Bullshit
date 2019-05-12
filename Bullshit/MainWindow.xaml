@@ -20,7 +20,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-           
+
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Grid.ColumnSpan="2" Margin="0,0,101,0">
@@ -35,18 +35,15 @@
             <MenuItem Header="Solution"/>
             <Image Source="/Resources/1200x630wa.png" Height="20" Width="20"/>
         </Menu>
-        
-        
+
+
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
             <Image Source="/Resources/Lupa.png" Width="20" Margin="0,11,0,0"/>
             <TextBox VerticalAlignment="Center" Width="124" Margin="0, 11 ,-10,0"/>
         </StackPanel>
 
         <Button Grid.Row="2" Content="Team tasks" Margin="10,10,10,10" Click="TeamTasksClick"/>
-        <Button Grid.Row="3" Content="My tasks" Margin="10,10,10,10"/>
-        <Button Grid.Row="4" Content="Вisposable tasks" Margin="10,10,10,10"/>
-        <Button Grid.Row="5" Content="Add new task" Margin="10,10,10,10"/>
-        <Button Grid.Row="6" Content="Add new task" Margin="10,10,10,10" Click="ChatOpenClick"/>
+        <Button Grid.Row="3" Content="Chat" Margin="10,10,10,10" Click="ChatOpenClick"/>
 
     </Grid>
 </Controls:MetroWindow>

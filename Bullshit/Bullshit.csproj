@@ -103,8 +103,8 @@
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StrarupUserControl.xaml.cs">
-      <DependentUpon>StrarupUserControl.xaml</DependentUpon>
+    <Compile Include="CanbanControl.xaml.cs">
+      <DependentUpon>CanbanControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserChat.xaml.cs">
       <DependentUpon>UserChat.xaml</DependentUpon>
@@ -139,7 +139,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StrarupUserControl.xaml">
+    <Page Include="CanbanControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

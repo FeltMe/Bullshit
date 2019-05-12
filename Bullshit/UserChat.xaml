@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Bullshit"
              mc:Ignorable="d" 
              d:DesignHeight="420" d:DesignWidth="640">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -20,11 +20,21 @@
 
         <TextBox x:Name="ChatNameOfProject"/>
         <TextBox Grid.Column="1" Text ="Users" TextAlignment="Center" IsReadOnly="True"/>
-        <RichTextBox Grid.Row="1" IsReadOnly="True"/>
-        <ListView Grid.Column="1" Grid.Row="1" />
+        <ScrollViewer Grid.Row="1">
+            <RichTextBox  IsReadOnly="True"/>
+        </ScrollViewer>
+        <ScrollViewer  Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <ListView Name="AppList">
+                <ListView.View>
+                    <GridView x:Name="Grid1">
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=User}" Width="auto">users</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
-            <TextBox x:Name="TextTosend" Width="442"/>
-            <Button Content="Send"/>
+            <TextBox x:Name="TextTosend" Width="441"/>
+            <Button Content="Send" Click="SendClick"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -19,54 +19,42 @@ namespace Bullshit
 
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
-        private UserControl CurrentUserControl = new UserControl(); 
+        private CanbanControle canban = new CanbanControle();
+        private UserChat chat = new UserChat();
+        private const int Grid_row = 1;
+        private const int Grid_col = 1;
+        private const int Grid_row_span = 7;
 
         public MainWindow()
         {
             InitializeComponent();
-            DefaultuserControl();
+            AddComponentToWokSpace(canban, Visibility.Visible);
+            AddComponentToWokSpace(chat, Visibility.Hidden);
         }
 
-        private void ChatOpenClick(object sender, RoutedEventArgs e)
+        private void AddComponentToWokSpace(UserControl control, Visibility visibility)
         {
-            MyChatOpen(CurrentUserControl);   
-        }
-
-        private void DefaultuserControl()
-        {
-            StrarupUserControl userControl = new StrarupUserControl();
-            Grid.SetRow(userControl, 1);
-            Grid.SetColumn(userControl, 1);
-            Grid.SetRowSpan(userControl, 7);
-            MyMainGrid.Children.Add(userControl);
-            CurrentUserControl = userControl;
-        }
-
-        private void MyChatOpen(UserControl control)
-        {
-            MyMainGrid.Children.Remove(control);
-            UserChat userControl = new UserChat();
-            Grid.SetRow(userControl, 1);
-            Grid.SetColumn(userControl, 1);
-            Grid.SetRowSpan(userControl, 7);
-            MyMainGrid.Children.Add(userControl);
-            CurrentUserControl = userControl;
+            control.Visibility = visibility;
+            Grid.SetRow(control, Grid_row);
+            Grid.SetColumn(control, Grid_col);
+            Grid.SetRowSpan(control, Grid_row_span);
+            MyMainGrid.Children.Add(control);
         }
 
         private void TeamTasksClick(object sender, RoutedEventArgs e)
         {
-            TaskOpen(CurrentUserControl);
+            Visible(canban, chat);
         }
 
-        private void TaskOpen(UserControl control)
+        private void ChatOpenClick(object sender, RoutedEventArgs e)
         {
-            MyMainGrid.Children.Remove(control);
-            StrarupUserControl userControl = new StrarupUserControl();
-            Grid.SetRow(userControl, 1);
-            Grid.SetColumn(userControl, 1);
-            Grid.SetRowSpan(userControl, 7);
-            MyMainGrid.Children.Add(userControl);
-            CurrentUserControl = userControl;
+            Visible(chat, canban);
+        }
+
+        private void Visible(UserControl ToVisible, UserControl ToHide)
+        {
+            ToVisible.Visibility = Visibility.Visible;
+            ToHide.Visibility = Visibility.Hidden;
         }
     }
 }

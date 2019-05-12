@@ -19,9 +19,9 @@ namespace Bullshit
     /// <summary>
     /// Interaction logic for StrarupUserControl.xaml
     /// </summary>
-    public partial class StrarupUserControl : UserControl
+    public partial class CanbanControle : UserControl
     {
-        public StrarupUserControl()
+        public CanbanControle()
         {
             InitializeComponent();
         }

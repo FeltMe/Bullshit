@@ -27,10 +27,10 @@ namespace Bullshit
 
         private void RegisterClick(object sender, RoutedEventArgs e)
         {
-            Reg();
+            Register();
         }
         
-        private void Reg()
+        private void Register()
         {
             RegisterQuery query = new RegisterQuery();
             if(query.AddNewUser(CreateNewUser()))
