@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bullshit.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace Bullshit
     /// </summary>
     public partial class MyVisualTask : UserControl
     {
+        public User UserWhoCreateTask { get; set; }
+
         public MyVisualTask()
         {
             InitializeComponent();
@@ -30,12 +33,16 @@ namespace Bullshit
             base.OnMouseMove(e);
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                DataObject data = new DataObject();
-                data.SetData("Double", MyTask.Height);
-                data.SetData("Object", this);
+                this.CretedByBox.IsEnabled = false;
+                this.DescriptionBox.IsEnabled = false;
+                //if ()
+               // {
+                    DataObject data = new DataObject();
+                    data.SetData("Double", MyTask.Height);
+                    data.SetData("Object", this);
 
-                DragDrop.DoDragDrop(this, data, DragDropEffects.Move);
-
+                    DragDrop.DoDragDrop(this, data, DragDropEffects.Move);
+                //}
             }
         }
 

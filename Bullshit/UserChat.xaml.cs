@@ -22,8 +22,8 @@ namespace Bullshit
     /// </summary>
     public partial class UserChat : UserControl
     {
-        private const int port = 8080;
-        private const string server = "127.0.0.1";
+        //private const int port = 8080;
+        //private const string server = "127.0.0.1";
 
         public User Currentuser { get; set; }
 
@@ -44,23 +44,23 @@ namespace Bullshit
             //SendText(text);
         }
 
-        private void SendText(string text)
-        {
-            TcpClient client = new TcpClient();
-            client.Connect(server, port);
-
-            StringBuilder response = new StringBuilder();
-            NetworkStream stream = client.GetStream();
-
-            byte[] data = Encoding.UTF8.GetBytes(text);
-
-
-            stream.Write(data, 0, data.Length);
-
-            MessageBox.Show(response.ToString());
-
-            stream.Close();
-            client.Close();
-        }
+       // private void SendText(string text)
+       // {
+       //     TcpClient client = new TcpClient();
+       //     client.Connect(server, port);
+       //
+       //     StringBuilder response = new StringBuilder();
+       //     NetworkStream stream = client.GetStream();
+       //
+       //     byte[] data = Encoding.UTF8.GetBytes(text);
+       //
+       //
+       //     stream.Write(data, 0, data.Length);
+       //
+       //     MessageBox.Show(response.ToString());
+       //
+       //     stream.Close();
+       //     client.Close();
+       // }
     }
 }

@@ -27,7 +27,7 @@ namespace Bullshit
         private const int Grid_row_span = 7;
 
 
-        public User CurrentUser { get; set; }
+        public User CurrentUser { get; set; } 
         public Project CurrentProject { get; set; }
 
         private CanbanControle canban = new CanbanControle();
@@ -37,13 +37,18 @@ namespace Bullshit
         public MainWindow()
         {
             InitializeComponent();
-            AddComponentToWokSpace(canban, Visibility.Visible);
-            AddComponentToWokSpace(chat, Visibility.Hidden);
+            AddComponentToWokSpace(canban, Visibility.Visible, CurrentUser);
+            AddComponentToWokSpace(chat, Visibility.Hidden, CurrentUser);
         }
 
-        private void AddComponentToWokSpace(UserControl control, Visibility visibility)
+        private void AddComponentToWokSpace(UserControl control, Visibility visibility, User user)
         {
             control.Visibility = visibility;
+            if (control is CanbanControle)
+            {
+                (control as CanbanControle).User = user;
+            }
+            else (control as UserChat).Currentuser = user;
             Grid.SetRow(control, Grid_row);
             Grid.SetColumn(control, Grid_col);
             Grid.SetRowSpan(control, Grid_row_span);

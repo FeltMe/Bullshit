@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bullshit.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,6 +22,9 @@ namespace Bullshit
     /// </summary>
     public partial class CanbanControle : UserControl
     {
+
+        public User User { get; set; }
+
         public CanbanControle()
         {
             InitializeComponent();
@@ -61,7 +65,7 @@ namespace Bullshit
         private void CreateNewTaskClick(object sender, MouseButtonEventArgs e)
         {
             var tmp = (sender as StackPanel);
-            tmp.Children.Add(new MyVisualTask() { Height = 80, Margin = new Thickness() { Left = 5, Bottom = 5, Right = 5, Top = 5 } });
+            tmp.Children.Add(new MyVisualTask() { Height = 80, Margin = new Thickness() { Left = 5, Bottom = 5, Right = 5, Top = 5 }, UserWhoCreateTask = User });
         }
     }
 }
