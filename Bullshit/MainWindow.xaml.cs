@@ -27,7 +27,9 @@ namespace Bullshit
         private const int Grid_row_span = 7;
 
 
-        public User Currentuser { get; set; }
+        public User CurrentUser { get; set; }
+        public Project CurrentProject { get; set; }
+
         private CanbanControle canban = new CanbanControle();
         private UserChat chat = new UserChat();
 
@@ -56,7 +58,7 @@ namespace Bullshit
         private void ChatOpenClick(object sender, RoutedEventArgs e)
         {
             Visible(chat, canban);
-            chat.Currentuser = Currentuser;
+            chat.Currentuser = CurrentUser;
         }
 
         private void Visible(UserControl ToVisible, UserControl ToHide)
@@ -67,7 +69,7 @@ namespace Bullshit
 
         private void MenuMeEnter(object sender, MouseEventArgs e)
         {
-            UserName.Text = Currentuser.Login;
+            UserName.Text = CurrentUser.Login;
         }
 
         

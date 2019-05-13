@@ -41,7 +41,7 @@ namespace Bullshit
         {
             TextToSend.Clear();
             ChatTextBox.Document.Blocks.Add(new Paragraph(new Run(Currentuser.Login + ": " + text)));
-            SendText(text);
+            //SendText(text);
         }
 
         private void SendText(string text)
@@ -49,8 +49,7 @@ namespace Bullshit
             TcpClient client = new TcpClient();
             client.Connect(server, port);
 
-            //byte[] data = new byte[256];
-            //StringBuilder response = new StringBuilder();
+            StringBuilder response = new StringBuilder();
             NetworkStream stream = client.GetStream();
 
             byte[] data = Encoding.UTF8.GetBytes(text);
@@ -58,7 +57,7 @@ namespace Bullshit
 
             stream.Write(data, 0, data.Length);
 
-            //MessageBox.Show(response.ToString());
+            MessageBox.Show(response.ToString());
 
             stream.Close();
             client.Close();

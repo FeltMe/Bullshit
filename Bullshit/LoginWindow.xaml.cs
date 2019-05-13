@@ -25,18 +25,30 @@ namespace Bullshit
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            Login();
+            try
+            {
+                Login();
+            }
+            catch(Exception)
+            {
+               MessageBox.Show("Eror");
+            }
         }
 
         private void Login()
         {
             AcceptLoginWCFData datas = new AcceptLoginWCFData();
+
             User user = new User();
-            if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password, ref user))
+            Project project = new Project();
+
+            if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password,
+                Int32.Parse(IdProjectBox.Text), ref user, ref project))
             {
                 MainWindow window = new MainWindow
                 {
-                    Currentuser = user
+                    CurrentUser = user,
+                    CurrentProject = project
                 };
                 window.Show();
                 this.Close();
@@ -46,6 +58,8 @@ namespace Bullshit
                 MessageBox.Show("Eror while Logi in");
             }
         }
+
+
 
         private void SignUpClick(object sender, RoutedEventArgs e)
         {

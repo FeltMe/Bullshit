@@ -17,24 +17,19 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="7*"/>
-            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-
-        <Menu Grid.ColumnSpan="3" FontSize="10">
-            <MenuItem Header=""/>
-            <MenuItem/>
-            <MenuItem/>
-        </Menu>
-
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="165">
-            <TextBox x:Name="UsernameTextBox" Margin="60,0,60,0" Height="30" FontSize="15"/>
-            <PasswordBox x:Name="UserPasswordBox" Margin="60,10,60,30" Height="30"/>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="200">
+            <TextBox x:Name="UsernameTextBox" Margin="60,0,60,5" Height="30" FontSize="15"/>
+            <PasswordBox x:Name="UserPasswordBox" Margin="60,0,60,0" Height="30"/>
+            <TextBox x:Name="IdProjectBox" Margin="60,5,60,30" Height="30" FontSize="15"/>
             <Button Content="Login in" Margin="60,0,60,0" Grid.ColumnSpan="2" Background="MediumPurple" Height="30" Click="LoginClick"/>
             <Button Content="Sign Up" Margin="60,5,60,0" Grid.ColumnSpan="2" Background="MediumPurple" Height="30" Click="SignUpClick"/>
 
         </StackPanel>
 
         <Image Source="/Resources/KanBan.png" Grid.Row="1" Grid.Column="1"/>
+        
+       
     </Grid>
 </Controls:MetroWindow>

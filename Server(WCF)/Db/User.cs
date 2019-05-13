@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server_WCF_.Db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,9 +13,8 @@ namespace Bullshit.Db
     [DataContract]
     public class User
     {
-        [Index(IsUnique = true)]
-        [DataMember]
         [Key]
+        [DataMember]
         public int Id { get; set; }
 
         [DataMember]
@@ -33,6 +33,8 @@ namespace Bullshit.Db
         [Required]
         public string Gmail { get; set; }
 
-
+        [DataMember]
+        [Required]
+        public Project CurrentProject { get; set; }
     }
 }

@@ -33,25 +33,13 @@ namespace Bullshit
         private void Register()
         {
             RegisterQuery query = new RegisterQuery();
-            if(query.AddNewUser(CreateNewUser()))
+
+            if(query.AddNewUser(new ServiceReference1.User()))
             {
-                MessageBox.Show("Ok!");
+                MainWindow window = new MainWindow();
+                window.ShowDialog();
             }
             else MessageBox.Show("Ne ok");
-        }
-
-        private ServiceReference1.User CreateNewUser()
-        {
-            ServiceReference1.User user = new ServiceReference1.User
-            {
-                Login = "111",
-                Password = "111",
-                Right = false,
-                Gmail = "1",
-                
-                
-            };
-            return user;
         }
     }
 }

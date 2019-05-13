@@ -13,7 +13,6 @@ namespace Server_WCF_.Db
     [DataContract]
     public class Project
     {
-        [Index(IsUnique = true)]
         [DataMember]
         [Key]
         public int Id { get; set; }
@@ -23,7 +22,7 @@ namespace Server_WCF_.Db
         public string ProjectName { get; set; }
 
         [DataMember]
-        [Required]
-        public List<User> Right { get; set;  }
+        public List<User> Useres { get; set; } = new List<User>();
+
     }
 }

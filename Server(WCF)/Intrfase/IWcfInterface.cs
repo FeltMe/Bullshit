@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using Bullshit.Db;
+using Server_WCF_.Db;
 
 namespace Server_WCF_.Intrfase
 {
@@ -21,6 +22,6 @@ namespace Server_WCF_.Intrfase
         User RetrunCurentStateOfProject(int ProjectId); // Return to user full state of project + return state of tasks
 
         [OperationContract]
-        bool IsLogined(User user);
+        bool IsLogined(User user, Project project);
     }
 }

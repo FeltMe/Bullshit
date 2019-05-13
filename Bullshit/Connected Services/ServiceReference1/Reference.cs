@@ -23,6 +23,9 @@ namespace Bullshit.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Bullshit.ServiceReference1.Project CurrentProjectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -44,6 +47,19 @@ namespace Bullshit.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Bullshit.ServiceReference1.Project CurrentProject {
+            get {
+                return this.CurrentProjectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentProjectField, value) != true)) {
+                    this.CurrentProjectField = value;
+                    this.RaisePropertyChanged("CurrentProject");
+                }
             }
         }
         
@@ -122,6 +138,83 @@ namespace Bullshit.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Project", Namespace="http://schemas.datacontract.org/2004/07/Server_WCF_.Db")]
+    [System.SerializableAttribute()]
+    public partial class Project : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProjectNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Bullshit.ServiceReference1.User[] UseresField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProjectName {
+            get {
+                return this.ProjectNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectNameField, value) != true)) {
+                    this.ProjectNameField = value;
+                    this.RaisePropertyChanged("ProjectName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Bullshit.ServiceReference1.User[] Useres {
+            get {
+                return this.UseresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UseresField, value) != true)) {
+                    this.UseresField = value;
+                    this.RaisePropertyChanged("Useres");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWcfInterface")]
     public interface IWcfInterface {
@@ -145,10 +238,10 @@ namespace Bullshit.ServiceReference1 {
         System.Threading.Tasks.Task<Bullshit.ServiceReference1.User> RetrunCurentStateOfProjectAsync(int ProjectId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/IsLogined", ReplyAction="http://tempuri.org/IWcfInterface/IsLoginedResponse")]
-        bool IsLogined(Bullshit.ServiceReference1.User user);
+        bool IsLogined(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/IsLogined", ReplyAction="http://tempuri.org/IWcfInterface/IsLoginedResponse")]
-        System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user);
+        System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -202,12 +295,12 @@ namespace Bullshit.ServiceReference1 {
             return base.Channel.RetrunCurentStateOfProjectAsync(ProjectId);
         }
         
-        public bool IsLogined(Bullshit.ServiceReference1.User user) {
-            return base.Channel.IsLogined(user);
+        public bool IsLogined(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project) {
+            return base.Channel.IsLogined(user, project);
         }
         
-        public System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user) {
-            return base.Channel.IsLoginedAsync(user);
+        public System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project) {
+            return base.Channel.IsLoginedAsync(user, project);
         }
     }
 }

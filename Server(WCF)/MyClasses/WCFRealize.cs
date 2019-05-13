@@ -1,4 +1,5 @@
 ﻿using Bullshit.Db;
+using Server_WCF_.Db;
 using Server_WCF_.Intrfase;
 using Server_WCF_.MyClasses;
 using System;
@@ -32,12 +33,11 @@ namespace Server_WCF_
             return null; //todo
         }
 
-        public bool IsLogined(User user)
+        public bool IsLogined(User user, Project project)
         {
-
             Console.WriteLine(user.Login);
             Sercher sercher = new Sercher();
-            if (sercher.Serch(user))
+            if (sercher.Serch(user, project))
                 return true;
             else return false;
         }

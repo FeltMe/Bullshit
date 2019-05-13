@@ -12,15 +12,15 @@ namespace Bullshit.Classes
     public class AcceptLoginWCFData
     {
         public MyEncipher Enc { get; set; } = new MyEncipher();
-        public User LoginedUser { get; set; }
 
-        public bool CheckIn(string username, string password, ref User user)
+        public bool CheckIn(string username, string password, int ProjectId ,ref User user, ref Project project)
         {
             user.Login = /*Enc.Encryption*/username;
             user.Password = /*Enc.Encryption*/password;
+            project.Id = ProjectId;
 
             WcfInterfaceClient client = new WcfInterfaceClient();
-            if (client.IsLogined(user))
+            if (client.IsLogined(user, project))
             {
                 return true;
             }
