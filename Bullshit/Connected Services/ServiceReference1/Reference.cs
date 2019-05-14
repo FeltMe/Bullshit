@@ -215,6 +215,67 @@ namespace Bullshit.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserViewClass", Namespace="http://schemas.datacontract.org/2004/07/Server_WCF_.MyClasses")]
+    [System.SerializableAttribute()]
+    public partial class UserViewClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWcfInterface")]
     public interface IWcfInterface {
@@ -242,6 +303,12 @@ namespace Bullshit.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/IsLogined", ReplyAction="http://tempuri.org/IWcfInterface/IsLoginedResponse")]
         System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReturnAllUsersForChat", ReplyAction="http://tempuri.org/IWcfInterface/ReturnAllUsersForChatResponse")]
+        Bullshit.ServiceReference1.UserViewClass[] ReturnAllUsersForChat(int IdOfProject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReturnAllUsersForChat", ReplyAction="http://tempuri.org/IWcfInterface/ReturnAllUsersForChatResponse")]
+        System.Threading.Tasks.Task<Bullshit.ServiceReference1.UserViewClass[]> ReturnAllUsersForChatAsync(int IdOfProject);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -301,6 +368,14 @@ namespace Bullshit.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> IsLoginedAsync(Bullshit.ServiceReference1.User user, Bullshit.ServiceReference1.Project project) {
             return base.Channel.IsLoginedAsync(user, project);
+        }
+        
+        public Bullshit.ServiceReference1.UserViewClass[] ReturnAllUsersForChat(int IdOfProject) {
+            return base.Channel.ReturnAllUsersForChat(IdOfProject);
+        }
+        
+        public System.Threading.Tasks.Task<Bullshit.ServiceReference1.UserViewClass[]> ReturnAllUsersForChatAsync(int IdOfProject) {
+            return base.Channel.ReturnAllUsersForChatAsync(IdOfProject);
         }
     }
 }

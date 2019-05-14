@@ -1,6 +1,7 @@
 ﻿using Bullshit.ServiceReference1;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -27,9 +28,12 @@ namespace Bullshit
 
         public User Currentuser { get; set; }
 
+        public ObservableCollection<ServiceReference1.UserViewClass> UserViews { get; set; } = new ObservableCollection<ServiceReference1.UserViewClass>();
+
         public UserChat()
         {
             InitializeComponent();
+            UserViewChat.ItemsSource = UserViews;
         }
 
         private void SendClick(object sender, RoutedEventArgs e)
@@ -41,26 +45,14 @@ namespace Bullshit
         {
             TextToSend.Clear();
             ChatTextBox.Document.Blocks.Add(new Paragraph(new Run(Currentuser.Login + ": " + text)));
-            //SendText(text);
         }
 
-       // private void SendText(string text)
-       // {
-       //     TcpClient client = new TcpClient();
-       //     client.Connect(server, port);
-       //
-       //     StringBuilder response = new StringBuilder();
-       //     NetworkStream stream = client.GetStream();
-       //
-       //     byte[] data = Encoding.UTF8.GetBytes(text);
-       //
-       //
-       //     stream.Write(data, 0, data.Length);
-       //
-       //     MessageBox.Show(response.ToString());
-       //
-       //     stream.Close();
-       //     client.Close();
-       // }
+        public void AddingUsersToView()
+        {
+            using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
+            {
+                UserViews = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
+            }
+        }
     }
 }

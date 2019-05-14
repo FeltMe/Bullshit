@@ -4,6 +4,7 @@ using Server_WCF_.Intrfase;
 using Server_WCF_.MyClasses;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -30,7 +31,14 @@ namespace Server_WCF_
 
         public User RetrunCurentStateOfProject(int IdOfProject)
         {
-            return null; //todo
+            return null; // todo
+        }
+
+        public ObservableCollection<UserViewClass> ReturnAllUsersForChat(int IdOfProject)
+        {
+            Sercher sercher = new Sercher();
+            var datas = sercher.SerchUsersForView(IdOfProject);
+            return datas;
         }
 
         public bool IsLogined(User user, Project project)

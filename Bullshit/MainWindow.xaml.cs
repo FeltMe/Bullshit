@@ -27,7 +27,7 @@ namespace Bullshit
         private const int Grid_row_span = 7;
 
 
-        public User CurrentUser { get; set; } 
+        public User CurrentUser { get; set; }
         public Project CurrentProject { get; set; }
 
         private CanbanControle canban = new CanbanControle();
@@ -64,6 +64,7 @@ namespace Bullshit
         {
             Visible(chat, canban);
             chat.Currentuser = CurrentUser;
+
         }
 
         private void Visible(UserControl ToVisible, UserControl ToHide)
@@ -76,7 +77,5 @@ namespace Bullshit
         {
             UserName.Text = CurrentUser.Login;
         }
-
-        
     }
 }

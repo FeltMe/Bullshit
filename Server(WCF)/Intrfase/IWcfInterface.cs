@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using Bullshit.Db;
 using Server_WCF_.Db;
+using Server_WCF_.MyClasses;
+using System.Collections.ObjectModel;
 
 namespace Server_WCF_.Intrfase
 {
@@ -23,5 +25,9 @@ namespace Server_WCF_.Intrfase
 
         [OperationContract]
         bool IsLogined(User user, Project project);
+
+        [OperationContract]
+        ObservableCollection<UserViewClass> ReturnAllUsersForChat(int IdOfProject);
+
     }
 }

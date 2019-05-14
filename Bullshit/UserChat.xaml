@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bullshit"
              mc:Ignorable="d" 
-             d:DesignHeight="420" d:DesignWidth="640">
+             d:DesignHeight="420" d:DesignWidth="640" >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,10 +24,11 @@
             <RichTextBox x:Name="ChatTextBox" IsReadOnly="True"/>
         </ScrollViewer>
         <ScrollViewer  Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-            <ListView Name="AppList">
+            <ListView Name="UserViewChat" >
                 <ListView.View>
                     <GridView x:Name="Grid1">
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=User}" Width="auto">users</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=User}" Width="80">User</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Status}" Width="80">Status</GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
