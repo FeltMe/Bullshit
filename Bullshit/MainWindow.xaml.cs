@@ -32,6 +32,7 @@ namespace Bullshit
 
         private CanbanControle canban = new CanbanControle();
         private UserChat chat = new UserChat();
+        
 
 
         public MainWindow()
@@ -64,7 +65,6 @@ namespace Bullshit
         {
             Visible(chat, canban);
             chat.Currentuser = CurrentUser;
-
         }
 
         private void Visible(UserControl ToVisible, UserControl ToHide)

@@ -23,19 +23,14 @@ namespace Bullshit
     /// </summary>
     public partial class UserChat : UserControl
     {
-        //private const int port = 8080;
-        //private const string server = "127.0.0.1";
-
         public User Currentuser { get; set; }
 
         public ObservableCollection<ServiceReference1.UserViewClass> UserViews { get; set; } = new ObservableCollection<ServiceReference1.UserViewClass>();
-        public dynamic Data { get; set; }
 
         public UserChat()
         {
             InitializeComponent();
             UserViewChat.ItemsSource = UserViews;
-            //AddingUsersToView()
         }
 
         private void SendClick(object sender, RoutedEventArgs e)
@@ -45,21 +40,29 @@ namespace Bullshit
 
         private void ReadMsg(string text)
         {
-            TextToSend.Clear();
-            ChatTextBox.Document.Blocks.Add(new Paragraph(new Run(Currentuser.Login + ": " + text)));
+            if (string.IsNullOrEmpty(text) != true)
+            {
+                TextToSend.Clear();
+                ChatTextBox.Document.Blocks.Add(new Paragraph(new Run(Currentuser.Login + ": " + text)));
+            }
         }
 
-        //public void AddingUsersToView()
-        //{
-        //    using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
-        //    {
-        //        Data = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
-        //    }
-        //
-        //    foreach (var item in Data as UserViewClass[])
-        //    {
-        //        UserViews.Add(item);
-        //    }
-        //}
+        public void AddingUsersToView()
+        {
+            using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
+            {
+                var Data = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
+                UserViews.Clear();
+                foreach (var item in Data as UserViewClass[])
+                {
+                    UserViews.Add(item);
+                }
+            }
+        }
+
+        private void LoadUsers(object sender, RoutedEventArgs e)
+        {
+            AddingUsersToView();
+        }
     }
 }

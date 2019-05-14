@@ -29,9 +29,9 @@ namespace Bullshit
             {
                 Login();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-               MessageBox.Show("Eror");
+               MessageBox.Show(ex.ToString());
             }
         }
 

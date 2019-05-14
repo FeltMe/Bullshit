@@ -8,7 +8,7 @@ using System.Windows.Input;
 using Bullshit.Classes;
 
 namespace Bullshit.Classes
-{
+{ 
     public class AcceptLoginWCFData
     {
         public MyEncipher Enc { get; set; } = new MyEncipher();
@@ -17,6 +17,7 @@ namespace Bullshit.Classes
         {
             user.Login = /*Enc.Encryption*/username;
             user.Password = /*Enc.Encryption*/password;
+            user.CurrentProject = project;
             project.Id = ProjectId;
 
             WcfInterfaceClient client = new WcfInterfaceClient();

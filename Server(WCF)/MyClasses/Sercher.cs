@@ -35,7 +35,7 @@ namespace Server_WCF_
             ObservableCollection<UserViewClass> datas = new ObservableCollection<UserViewClass>();
             using (MyAccounst accounst = new MyAccounst())
             {
-                var teams = accounst.Projects.Include("CurrentProject").ToList();
+                var teams = accounst.Projects.Include("UsersInProject").ToList();
 
                 foreach (var item in accounst.Users)
                 {

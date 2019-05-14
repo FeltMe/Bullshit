@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bullshit"
              mc:Ignorable="d" 
-             d:DesignHeight="420" d:DesignWidth="640" >
+             d:DesignHeight="420" d:DesignWidth="640">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,7 +34,8 @@
             </ListView>
         </ScrollViewer>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
-            <TextBox x:Name="TextToSend" Width="441"/>
+            <TextBox x:Name="TextToSend" Width="403"/>
+            <Button Content="Load" Click="LoadUsers"/>
             <Button Content="Send" Click="SendClick"/>
         </StackPanel>
     </Grid>
