@@ -86,6 +86,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="CoonectToProject.xaml.cs">
+      <DependentUpon>CoonectToProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyVisualTask.xaml.cs">
       <DependentUpon>MyVisualTask.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <DependentUpon>UserChat.xaml</DependentUpon>
     </Compile>
     <Compile Include="WcfServer\IWcfInterface.cs" />
+    <Page Include="CoonectToProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
