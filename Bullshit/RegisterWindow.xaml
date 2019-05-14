@@ -19,6 +19,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Grid.Row="2" Content="Register" Click="RegisterClick"/>
+        <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Bottom" Height="223" Grid.RowSpan="3">
+            <TextBox x:Name="LoginBox" Margin="60,0,60,5" Height="30" FontSize="15"/>
+            <PasswordBox x:Name="PasswordBox" Margin="60,0,60,0" Height="30" FontSize="15"/>
+            <TextBox x:Name="ProjectBox" Margin="60,5,60,5" Height="30" FontSize="15"/>
+            <TextBox x:Name="GmailBox" Margin="60,0,60,5" Height="30" FontSize="15"/>
+
+        </StackPanel>
+
+        <Button Grid.Column="1" Grid.Row="2" Content="Register" Click="RegisterClick" Margin="0,52,0,0"/>
+
     </Grid>
 </Controls:MetroWindow>

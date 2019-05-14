@@ -31,5 +31,8 @@ namespace Server_WCF_.Intrfase
 
         [OperationContract]
         void Logging(Logirovanie logirovanie);
+
+        [OperationContract]
+        Project ReturnProjectWithCurrentId(int Id);
     }
 }

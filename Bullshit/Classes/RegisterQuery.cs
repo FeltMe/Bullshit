@@ -17,13 +17,6 @@ namespace Bullshit.Classes
             WcfInterfaceClient wcf = new WcfInterfaceClient();
             try
             {
-                project.ProjectName = "Testtt";
-
-                user.Login = "Tmp";
-                user.Password = "1";
-                user.Right = false;
-                user.Gmail = "1";
-                user.CurrentProject = project;
                 if (wcf.WriteToDbOneUser(user))
                 {
                     return true;

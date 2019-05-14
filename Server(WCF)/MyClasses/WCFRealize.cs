@@ -65,5 +65,20 @@ namespace Server_WCF_
                 Console.WriteLine("Eror while loggining " + logirovanie.UserLogin);
             }
         }
+
+        public Project ReturnProjectWithCurrentId(int Id)
+        {
+            using (MyAccounst accounst = new MyAccounst())
+            {
+                foreach (var item in accounst.Projects)
+                {
+                    if(item.Id == Id)
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

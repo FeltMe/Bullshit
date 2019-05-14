@@ -34,9 +34,25 @@ namespace Bullshit
         {
             RegisterQuery query = new RegisterQuery();
 
-            if (query.AddNewUser(new ServiceReference1.User(), new ServiceReference1.Project()))
+            ServiceReference1.WcfInterfaceClient client = new ServiceReference1.WcfInterfaceClient();
+            var project = client.ReturnProjectWithCurrentId(Int32.Parse(ProjectBox.Text));
+            ServiceReference1.User user = new ServiceReference1.User
             {
-                MainWindow window = new MainWindow();
+                Login = LoginBox.Text,
+                Password = PasswordBox.Password,
+                Right = false,
+                Gmail = GmailBox.Text,
+                CurrentProject = project
+                
+            };
+
+            if (query.AddNewUser(user, project))
+            {
+                MainWindow window = new MainWindow
+                {
+                    CurrentUser = user,
+                    CurrentProject = project
+                };
                 window.ShowDialog();
             }
             else MessageBox.Show("Ne ok");
@@ -47,6 +63,11 @@ namespace Bullshit
             LoginWindow login = new LoginWindow();
             login.Show();
             this.Close();
+        }
+
+        private void Registerr()
+        {
+
         }
     }
 }

@@ -45,6 +45,12 @@
   <wsdl:message name="IWcfInterface_Logging_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoggingResponse" />
   </wsdl:message>
+  <wsdl:message name="IWcfInterface_ReturnProjectWithCurrentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnProjectWithCurrentId" />
+  </wsdl:message>
+  <wsdl:message name="IWcfInterface_ReturnProjectWithCurrentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnProjectWithCurrentIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWcfInterface">
     <wsdl:operation name="WriteToDbOneUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser" message="tns:IWcfInterface_WriteToDbOneUser_InputMessage" />
@@ -69,6 +75,10 @@
     <wsdl:operation name="Logging">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/Logging" message="tns:IWcfInterface_Logging_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWcfInterface/LoggingResponse" message="tns:IWcfInterface_Logging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnProjectWithCurrentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/ReturnProjectWithCurrentId" message="tns:IWcfInterface_ReturnProjectWithCurrentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfInterface/ReturnProjectWithCurrentIdResponse" message="tns:IWcfInterface_ReturnProjectWithCurrentId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWcfInterface" type="tns:IWcfInterface">
@@ -120,6 +130,15 @@
     </wsdl:operation>
     <wsdl:operation name="Logging">
       <soap:operation soapAction="http://tempuri.org/IWcfInterface/Logging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnProjectWithCurrentId">
+      <soap:operation soapAction="http://tempuri.org/IWcfInterface/ReturnProjectWithCurrentId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -84,4 +84,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ReturnProjectWithCurrentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnProjectWithCurrentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Server_WCF_.Db" minOccurs="0" name="ReturnProjectWithCurrentIdResult" nillable="true" type="q8:Project" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
