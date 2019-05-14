@@ -12,6 +12,7 @@ namespace Server_WCF_.MyClasses
     {
         [DataMember]
         public string User { get; set; }
+
         [DataMember]
         public string Status { get; set; }
     }

@@ -47,12 +47,12 @@ namespace Bullshit
             ChatTextBox.Document.Blocks.Add(new Paragraph(new Run(Currentuser.Login + ": " + text)));
         }
 
-        public void AddingUsersToView()
-        {
-            using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
-            {
-                UserViews = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
-            }
-        }
+        //public void AddingUsersToView()
+        //{
+        //    using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
+        //    {
+        //        UserViews = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
+        //    }
+        //}
     }
 }

@@ -22,7 +22,7 @@ namespace Server_WCF_.Db
         public string ProjectName { get; set; }
 
         [DataMember]
-        public List<User> Useres { get; set; } = new List<User>();
+        public List<User> UsersInProject { get; set; }
 
     }
 }

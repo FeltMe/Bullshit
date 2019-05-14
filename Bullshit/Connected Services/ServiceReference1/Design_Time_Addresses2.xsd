@@ -5,7 +5,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Bullshit.Db" minOccurs="0" name="Useres" nillable="true" type="q1:ArrayOfUser" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Bullshit.Db" minOccurs="0" name="UsersInProject" nillable="true" type="q1:ArrayOfUser" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Project" nillable="true" type="tns:Project" />
