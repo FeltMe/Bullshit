@@ -15,6 +15,8 @@ namespace Bullshit.Db
 
         public DbSet<Project> Projects { get; set; }
 
+        public DbSet<Logirovanie> Logging { get; set; }
+
         public MyAccounst() : base(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString) {} 
     }
 }

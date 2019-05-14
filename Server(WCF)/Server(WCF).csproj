@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Db\Logirovanie.cs" />
     <Compile Include="Db\MyAccounst.cs" />
     <Compile Include="Db\Project.cs" />
     <Compile Include="Db\User.cs" />

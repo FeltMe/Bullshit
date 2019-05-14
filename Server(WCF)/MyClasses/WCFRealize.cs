@@ -49,5 +49,21 @@ namespace Server_WCF_
                 return true;
             else return false;
         }
+
+        public void Logging(Logirovanie logirovanie)
+        {
+            try
+            {
+                using (MyAccounst accounst = new MyAccounst())
+                {
+                    accounst.Logging.Add(logirovanie);
+                    accounst.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Eror while loggining " + logirovanie.UserLogin);
+            }
+        }
     }
 }

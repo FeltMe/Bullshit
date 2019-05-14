@@ -29,5 +29,7 @@ namespace Server_WCF_.Intrfase
         [OperationContract]
         ObservableCollection<UserViewClass> ReturnAllUsersForChat(int IdOfProject);
 
+        [OperationContract]
+        void Logging(Logirovanie logirovanie);
     }
 }

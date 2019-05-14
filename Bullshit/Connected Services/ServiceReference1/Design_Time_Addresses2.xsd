@@ -9,4 +9,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:complexType name="Logirovanie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeLogining" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Logirovanie" nillable="true" type="tns:Logirovanie" />
 </xs:schema>

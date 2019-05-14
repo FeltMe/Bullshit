@@ -276,6 +276,99 @@ namespace Bullshit.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Logirovanie", Namespace="http://schemas.datacontract.org/2004/07/Server_WCF_.Db")]
+    [System.SerializableAttribute()]
+    public partial class Logirovanie : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProjectIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeLoginingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserLoginField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectId {
+            get {
+                return this.ProjectIdField;
+            }
+            set {
+                if ((this.ProjectIdField.Equals(value) != true)) {
+                    this.ProjectIdField = value;
+                    this.RaisePropertyChanged("ProjectId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TimeLogining {
+            get {
+                return this.TimeLoginingField;
+            }
+            set {
+                if ((this.TimeLoginingField.Equals(value) != true)) {
+                    this.TimeLoginingField = value;
+                    this.RaisePropertyChanged("TimeLogining");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserLogin {
+            get {
+                return this.UserLoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserLoginField, value) != true)) {
+                    this.UserLoginField = value;
+                    this.RaisePropertyChanged("UserLogin");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWcfInterface")]
     public interface IWcfInterface {
@@ -309,6 +402,12 @@ namespace Bullshit.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/ReturnAllUsersForChat", ReplyAction="http://tempuri.org/IWcfInterface/ReturnAllUsersForChatResponse")]
         System.Threading.Tasks.Task<Bullshit.ServiceReference1.UserViewClass[]> ReturnAllUsersForChatAsync(int IdOfProject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Logging", ReplyAction="http://tempuri.org/IWcfInterface/LoggingResponse")]
+        void Logging(Bullshit.ServiceReference1.Logirovanie logirovanie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfInterface/Logging", ReplyAction="http://tempuri.org/IWcfInterface/LoggingResponse")]
+        System.Threading.Tasks.Task LoggingAsync(Bullshit.ServiceReference1.Logirovanie logirovanie);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -376,6 +475,14 @@ namespace Bullshit.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Bullshit.ServiceReference1.UserViewClass[]> ReturnAllUsersForChatAsync(int IdOfProject) {
             return base.Channel.ReturnAllUsersForChatAsync(IdOfProject);
+        }
+        
+        public void Logging(Bullshit.ServiceReference1.Logirovanie logirovanie) {
+            base.Channel.Logging(logirovanie);
+        }
+        
+        public System.Threading.Tasks.Task LoggingAsync(Bullshit.ServiceReference1.Logirovanie logirovanie) {
+            return base.Channel.LoggingAsync(logirovanie);
         }
     }
 }

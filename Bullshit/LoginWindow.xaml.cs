@@ -45,6 +45,7 @@ namespace Bullshit
             if (datas.CheckIn(UsernameTextBox.Text, UserPasswordBox.Password,
                 Int32.Parse(IdProjectBox.Text), ref user, ref project))
             {
+                Logining(user.Login, project.Id, DateTime.Now);
                 MainWindow window = new MainWindow
                 {
                     CurrentUser = user,
@@ -59,7 +60,11 @@ namespace Bullshit
             }
         }
 
-
+        private void Logining(string login, int projId, DateTime time)
+        {
+            SendLogirovanieData Sender = new SendLogirovanieData();
+            Sender.Send(login, projId, DateTime.Now);
+        }
 
         private void SignUpClick(object sender, RoutedEventArgs e)
         {

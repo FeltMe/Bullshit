@@ -33,10 +33,6 @@ namespace Bullshit.Db
         [Required]
         public string Gmail { get; set; }
 
-        //[DataMember]
-        //[Required]
-        //public int CurrentProjectId { get; set; }
-
         [DataMember]
         [Required]
         public Project CurrentProject { get; set; }

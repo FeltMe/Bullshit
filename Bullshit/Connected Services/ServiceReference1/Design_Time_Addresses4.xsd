@@ -72,4 +72,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Logging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Server_WCF_.Db" minOccurs="0" name="logirovanie" nillable="true" type="q7:Logirovanie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoggingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

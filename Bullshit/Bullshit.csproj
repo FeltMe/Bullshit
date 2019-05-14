@@ -80,6 +80,7 @@
     <Compile Include="Classes\AcceptLoginWCFData.cs" />
     <Compile Include="Classes\MyEncipher.cs" />
     <Compile Include="Classes\RegisterQuery.cs" />
+    <Compile Include="Classes\SendLogirovanieData.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -39,6 +39,12 @@
   <wsdl:message name="IWcfInterface_ReturnAllUsersForChat_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReturnAllUsersForChatResponse" />
   </wsdl:message>
+  <wsdl:message name="IWcfInterface_Logging_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logging" />
+  </wsdl:message>
+  <wsdl:message name="IWcfInterface_Logging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoggingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWcfInterface">
     <wsdl:operation name="WriteToDbOneUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/WriteToDbOneUser" message="tns:IWcfInterface_WriteToDbOneUser_InputMessage" />
@@ -59,6 +65,10 @@
     <wsdl:operation name="ReturnAllUsersForChat">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/ReturnAllUsersForChat" message="tns:IWcfInterface_ReturnAllUsersForChat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWcfInterface/ReturnAllUsersForChatResponse" message="tns:IWcfInterface_ReturnAllUsersForChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfInterface/Logging" message="tns:IWcfInterface_Logging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfInterface/LoggingResponse" message="tns:IWcfInterface_Logging_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWcfInterface" type="tns:IWcfInterface">
@@ -101,6 +111,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReturnAllUsersForChat">
       <soap:operation soapAction="http://tempuri.org/IWcfInterface/ReturnAllUsersForChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logging">
+      <soap:operation soapAction="http://tempuri.org/IWcfInterface/Logging" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
