@@ -29,11 +29,13 @@ namespace Bullshit
         public User Currentuser { get; set; }
 
         public ObservableCollection<ServiceReference1.UserViewClass> UserViews { get; set; } = new ObservableCollection<ServiceReference1.UserViewClass>();
+        public dynamic Data { get; set; }
 
         public UserChat()
         {
             InitializeComponent();
             UserViewChat.ItemsSource = UserViews;
+            //AddingUsersToView()
         }
 
         private void SendClick(object sender, RoutedEventArgs e)
@@ -51,7 +53,12 @@ namespace Bullshit
         //{
         //    using (ServiceReference1.WcfInterfaceClient client = new WcfInterfaceClient())
         //    {
-        //        UserViews = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
+        //        Data = client.ReturnAllUsersForChat(Currentuser.CurrentProject.Id);
+        //    }
+        //
+        //    foreach (var item in Data as UserViewClass[])
+        //    {
+        //        UserViews.Add(item);
         //    }
         //}
     }

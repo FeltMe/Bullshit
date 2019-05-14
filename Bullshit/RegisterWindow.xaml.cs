@@ -29,17 +29,24 @@ namespace Bullshit
         {
             Register();
         }
-        
+
         private void Register()
         {
             RegisterQuery query = new RegisterQuery();
 
-            if(query.AddNewUser(new ServiceReference1.User()))
+            if (query.AddNewUser(new ServiceReference1.User(), new ServiceReference1.Project()))
             {
                 MainWindow window = new MainWindow();
                 window.ShowDialog();
             }
             else MessageBox.Show("Ne ok");
+        }
+
+        private void WindowClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
         }
     }
 }

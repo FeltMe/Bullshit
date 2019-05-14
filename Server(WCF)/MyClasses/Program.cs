@@ -37,7 +37,8 @@ namespace Server_WCF_
                     Password = "1",
                     CurrentProject = a,
                     Gmail = "1",
-                    Right = false
+                    Right = false,
+                    
                 };
                 q.Projects.Add(a);
                 q.Users.Add(b);
