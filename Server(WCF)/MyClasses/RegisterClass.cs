@@ -1,4 +1,5 @@
 ﻿using Bullshit.Db;
+using Server_WCF_.Db;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +17,16 @@ namespace Server_WCF_.MyClasses
             {
                 try
                 {
-                    if (myAccounst.Users.ToList().Contains(user) == true)
+                    foreach (var item in myAccounst.Users)
                     {
-                        return false;
+                        if (item.Login == user.Login)
+                        {
+                            return false;
+                        }
                     }
-                    else
-                    {
-                        myAccounst.Users.Add(user);
-                        myAccounst.SaveChanges();
-                        return true;
-                    }
+                    myAccounst.Users.Add(user);
+                    myAccounst.SaveChanges();
+                    return true;
 
                 }
                 catch (Exception ex)
@@ -35,7 +36,5 @@ namespace Server_WCF_.MyClasses
             }
             return false;
         }
-
     }
-
 }

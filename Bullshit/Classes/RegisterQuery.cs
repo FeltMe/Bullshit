@@ -12,7 +12,7 @@ namespace Bullshit.Classes
     {
         public MyEncipher Enc { get; set; } = new MyEncipher();
 
-        public bool AddNewUser(User user, Project project)
+        public bool AddNewUser(User user)
         {
             WcfInterfaceClient wcf = new WcfInterfaceClient();
             try
