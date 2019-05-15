@@ -72,6 +72,12 @@ namespace Bullshit
             window.Show();
             this.Close();
         }
+
+        private void JoinClick(object sender, RoutedEventArgs e)
+        {
+            Coon coon = new Coon();
+            coon.ShowDialog();
+        }
     }
 }
 

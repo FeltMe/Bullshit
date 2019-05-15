@@ -42,6 +42,7 @@ namespace Bullshit
         {
             if (e.Handled == false)
             {
+               
                 Panel _panel = (Panel)sender;
                 UIElement _element = (UIElement)e.Data.GetData("Object");
 
@@ -65,7 +66,7 @@ namespace Bullshit
         private void CreateNewTaskClick(object sender, MouseButtonEventArgs e)
         {
             var tmp = (sender as StackPanel);
-            tmp.Children.Add(new MyVisualTask() { Height = 80, Margin = new Thickness() { Left = 5, Bottom = 5, Right = 5, Top = 5 }, UserWhoCreateTask = User });
+            tmp.Children.Add(new MyVisualTask() { Height = 80, Margin = new Thickness() { Left = 5, Bottom = 5, Right = 5, Top = 5 }, UserWhoCreateTask = User  });
         }
     }
 }

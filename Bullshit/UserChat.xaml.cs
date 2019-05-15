@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Bullshit
 {
-    /// <summary>
-    /// Логика взаимодействия для UserChat.xaml
-    /// </summary>
     public partial class UserChat : UserControl
     {
         public User Currentuser { get; set; }

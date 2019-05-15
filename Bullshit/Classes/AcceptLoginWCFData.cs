@@ -15,8 +15,8 @@ namespace Bullshit.Classes
 
         public bool CheckIn(string username, string password, int ProjectId ,ref User user, ref Project project)
         {
-            user.Login = /*Enc.Encryption*/username;
-            user.Password = /*Enc.Encryption*/password;
+            user.Login = username;
+            user.Password = password;
             user.CurrentProject = project;
             project.Id = ProjectId;
 

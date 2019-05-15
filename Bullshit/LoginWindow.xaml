@@ -28,7 +28,7 @@
 
         </StackPanel>
 
-        <Image Source="/Resources/KanBan.png" Grid.Row="1" Grid.Column="1"/>
+        <Image Source="/Resources/KanBan.png" Grid.Row="1" Grid.Column="1" Margin="10,10,10,0"/>
         
        
     </Grid>

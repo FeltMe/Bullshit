@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Bullshit
 {
-    /// <summary>
-    /// Логика взаимодействия для MyVisualTask.xaml
-    /// </summary>
     public partial class MyVisualTask : UserControl
     {
         public User UserWhoCreateTask { get; set; }
@@ -26,6 +23,7 @@ namespace Bullshit
         public MyVisualTask()
         {
             InitializeComponent();
+            
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -33,16 +31,12 @@ namespace Bullshit
             base.OnMouseMove(e);
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                this.CretedByBox.IsEnabled = false;
-                this.DescriptionBox.IsEnabled = false;
-                //if ()
-               // {
+                
                     DataObject data = new DataObject();
                     data.SetData("Double", MyTask.Height);
                     data.SetData("Object", this);
 
                     DragDrop.DoDragDrop(this, data, DragDropEffects.Move);
-                //}
             }
         }
 
@@ -70,14 +64,12 @@ namespace Bullshit
 
         private void ApplyClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Apply");
             CretedByBox.IsEnabled = false;
             DescriptionBox.IsEnabled = false;
         }
 
         private void EditClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Edited");
             CretedByBox.IsEnabled = true;
             DescriptionBox.IsEnabled = true;
         }

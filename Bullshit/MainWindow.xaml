@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bullshit"
         mc:Ignorable="d"
-        Title="Kaban" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/KanBan.png" ShowIconOnTitleBar="False">
+        Title="Kaban" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="/Resources/KanBan.png" ShowIconOnTitleBar="False">
     <Grid x:Name="MyMainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,28 +23,15 @@
 
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Menu"/>
-            <MenuItem Header="Friends"/>
-            <MenuItem Header="Tasks">
-                <MenuItem Header="Generate new task"/>
-            </MenuItem>
 
-        </Menu>
-        <Menu Grid.Column="1" HorizontalAlignment="Right">
-            <MenuItem Header="Me" MouseEnter="MenuMeEnter">
+        <Menu HorizontalAlignment="Right" Grid.ColumnSpan="2" Width="794">
+            <MenuItem Header="Me" MouseEnter="MenuMeEnter" Width="auto">
                 <TextBlock x:Name="UserName"/>
             </MenuItem>
         </Menu>
 
-
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
-            <Image Source="/Resources/Lupa.png" Width="20" Margin="0,11,0,0"/>
-            <TextBox VerticalAlignment="Center" Width="124" Margin="0, 11 ,-10,0"/>
-        </StackPanel>
-
         <Button Grid.Row="2" Content="Team tasks" Margin="10,10,10,10" Click="TeamTasksClick"/>
-        <Button Grid.Row="3" Content="Chat" Margin="10,10,10,10" Click="ChatOpenClick"/>
+        <Button Grid.Row="3" Content="Chat and Users" Margin="10,10,10,10" Click="ChatOpenClick"/>
 
     </Grid>
 </Controls:MetroWindow>
