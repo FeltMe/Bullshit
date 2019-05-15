@@ -1,9 +1,11 @@
 ﻿using Bullshit.ServiceReference1;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +26,7 @@ namespace Bullshit
 
         private const int Grid_row = 1;
         private const int Grid_col = 1;
-        private const int Grid_row_span = 7;
+        private const int Grid_row_span = 6;
 
 
         public User CurrentUser { get; set; }
@@ -77,5 +79,30 @@ namespace Bullshit
         {
             UserName.Text = CurrentUser.Login;
         }
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += worker_DoWork;
+            worker.ProgressChanged += worker_ProgressChanged;
+
+            worker.RunWorkerAsync();
+        }
+
+        void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                (sender as BackgroundWorker).ReportProgress(i);
+                Thread.Sleep(3000);
+            }
+        }
+
+        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            pbStatus.Value = e.ProgressPercentage;
+        }
+
     }
 }

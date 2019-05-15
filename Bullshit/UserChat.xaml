@@ -9,8 +9,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -34,9 +34,9 @@
             </ListView>
         </ScrollViewer>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Orientation="Horizontal">
-            <TextBox x:Name="TextToSend" Width="403"/>
-            <Button Content="Load" Click="LoadUsers"/>
-            <Button Content="Send" Click="SendClick"/>
+            <TextBox x:Name="TextToSend" Width="297" FontSize="20"/>
+            <Button Content="Load" Click="LoadUsers" Margin="5,5,5,5"/>
+            <Button Content="Send" Click="SendClick" Margin="5,5,25,5"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -56,7 +56,7 @@ namespace Bullshit
             }
             else
             {
-                MessageBox.Show("Eror while Logi in");
+                MessageBox.Show("Error while Login in");
             }
         }
 

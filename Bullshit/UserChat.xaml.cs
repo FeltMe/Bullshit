@@ -28,6 +28,7 @@ namespace Bullshit
         {
             InitializeComponent();
             UserViewChat.ItemsSource = UserViews;
+            UserViewChat.Foreground = Brushes.Blue;
         }
 
         private void SendClick(object sender, RoutedEventArgs e)
